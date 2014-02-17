@@ -30,7 +30,7 @@ private:
     // Reference count of component.
     long m_cRef;
 
-	std::vector<std::wstring> paths;
+    std::vector<std::wstring> paths;
 
     PWSTR m_pszMenuText;
     PCSTR m_pszVerb;
