@@ -5,7 +5,7 @@
 
 std::wstring WinInfoGetter::getCreationDate(const std::wstring & path)
 {
-	std::wstringstream stream;
+    std::wstringstream stream;
     WIN32_FILE_ATTRIBUTE_DATA attr;
     SYSTEMTIME time;
      
@@ -13,13 +13,13 @@ std::wstring WinInfoGetter::getCreationDate(const std::wstring & path)
     FileTimeToSystemTime(&attr.ftCreationTime, &time);
     stream << time.wMonth << '/' << time.wDay << '/' << time.wYear;
     
-	return stream.str();
+    return stream.str();
 }
 
 double WinInfoGetter::fileSize(const std::wstring & path) 
 {
-	HANDLE hFile = CreateFile(path.c_str(), GENERIC_READ, 
-        FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, 
+    HANDLE hFile = CreateFile(path.c_str(), GENERIC_READ, 
+    	FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, 
         FILE_ATTRIBUTE_NORMAL, NULL);
 
     if (hFile==INVALID_HANDLE_VALUE)
